@@ -1,0 +1,33 @@
+# 브라우저 시각적 및 기능적 최종 검증 검토 목록
+
+## [x] Step 1: 홈 화면 검증 (http://localhost:3001)
+- [x] 히어로 영역 마우스 스크롤 인디케이터 유무 및 애니메이션
+- [x] 메인 하단 4열 신뢰성 보증 뱃지(Trust Signals) 배치
+- [x] 40% 이미지 + 60% 소개/통계 카운터 브랜드 스토리 검증
+- [x] 푸터 최상단 보증 띠 배너 및 뉴스레터 구독 폼 렌더링
+- [x] 스크린샷 캡처 및 저장 완료 (`home_page_hero_1779200169287.png`, `home_page_trust_signals_1779200177115.png`, `home_page_brand_story_1779200193978.png`, `home_page_footer_1779200202914.png`)
+
+
+## [x] Step 2: 갤러리 탐색 및 다차원 필터 검증 (/gallery)
+- [x] 키워드 검색창 입력 및 필터 동작 확인 (태그 클릭 및 검색 필터 확인)
+- [x] 카테고리, 방향, 컬러 톤, 가격대 다차원 필터 렌더링
+- [x] 찜하기(하트) 토글 동작 및 헤더 위시리스트 카운터 실시간 동기화
+- [x] 스크린샷 캡처 및 저장 완료 (`gallery_filters_1779200224575.png`, `gallery_wishlist_sync_1779200253457.png`)
+
+## [x] Step 3: 작품 상세 및 즉시 소장하기 검증 (/gallery/[id])
+- [x] 고해상도 워터마크 이미지 및 시네마 와이드 뷰 전환 검증
+- [x] 메타데이터 명세표 및 개인용/상업용 라이선스 라디오 선택 옵션 검증
+- [x] 즉시 소장하기 (Gumroad식 모달) 클릭 시 이메일 입력창 활성화
+- [x] 목(Mock) 결제 프로세스 완료 및 다운로드/주문번호 확인
+- [x] 스크린샷 캡처 및 저장 완료 (`artwork_detail_1779200277527.png`, `quick_buy_modal_1779200295153.png`, `quick_buy_success_1779200333084.png`)
+
+## [x] Step 4: 작가 소개(About) 및 라이선스 규정(License) 페이지 검증 (/about, /license)
+- [x] 4단계 작업 타임라인 디자인 및 정렬 상태 검증 완료
+- [x] 작업 장비 리스트 및 활동 지역 카드 레이아웃 검증 완료
+- [x] 라이선스 2종(개인용/상업용) 범위 및 체크 리스트 규정 테이블 렌더링 검증 완료
+- [x] 스크린샷 캡처 및 저장 완료 (`about_page_intro_1779200472080.png`, `about_page_timeline_1779200484653.png`, `license_page_comparison_1779200495900.png`)
+
+## [ ] Step 5: walkthrough.md 작성 및 task.md 갱신
+- [ ] 검증 내역 정리 및 `walkthrough.md` 생성
+- [ ] `task.md` 완료로 갱신
+
