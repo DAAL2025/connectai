@@ -1,0 +1,34 @@
+# 브라우저 시각적 및 기능적 최종 검증 검토 목록
+
+## [ ] Step 1: 홈 화면 검증 (http://localhost:3001)
+- [ ] 히어로 영역 마우스 스크롤 인디케이터 유무 및 애니메이션
+- [ ] 메인 하단 4열 신뢰성 보증 뱃지(Trust Signals) 배치
+- [ ] 40% 이미지 + 60% 소개/통계 카운터 브랜드 스토리 검증
+- [ ] 푸터 최상단 보증 띠 배너 및 뉴스레터 구독 폼 렌더링
+- [ ] 스크린샷 캡처 및 저장 (`home_page_hero`, `home_page_trust_signals`, `home_page_brand_story`, `home_page_footer`)
+
+## [ ] Step 2: 갤러리 탐색 및 다차원 필터 검증 (/gallery)
+- [ ] 키워드 검색창 입력 및 필터 동작 확인
+- [ ] 태그 클라우드 클릭 시 필터 동작
+- [ ] 컬러칩, 방향(가로/세로/정사각), 가격대 필터의 중첩 작동
+- [ ] 찜하기(하트) 버튼 토글 시 헤더의 `♡ N` 카운트 실시간 동기화
+- [ ] 스크린샷 캡처 및 저장 (`gallery_filters`, `gallery_wishlist_sync`)
+
+## [ ] Step 3: 상세 페이지 구매 여정 및 시네마틱 뷰 검증 (/gallery/1)
+- [ ] Gumroad식 즉시 구매 팝업(Quick Buy Modal) 열기
+- [ ] 이메일 입력, 모의 결제 수단 선택 후 결제 승인
+- [ ] 다운로드 링크 생성 및 가상 파일 다운로드 완료 확인
+- [ ] 시네마틱 뷰(전체 화면 암전 라이트박스) 실행
+- [ ] 좌우 이동 버튼 및 닫기 버튼 검증
+- [ ] 공유 툴바(링크 복사, SNS 공유) 확인
+- [ ] 스마트 추천 에디션(3열) 정렬 확인
+- [ ] 스크린샷 캡처 및 저장 (`artwork_detail`, `quick_buy_modal`, `payment_success`, `cinema_lightbox`)
+
+## [ ] Step 4: 작가 소개(About) 페이지 검증 (/about)
+- [ ] 4단계 작업 타임라인 디자인 및 정렬 상태 검증
+- [ ] 작업 장비 리스트 카드 그리드 레이아웃 검증
+- [ ] 스크린샷 캡처 및 저장 (`about_page_timeline`, `about_page_gear`)
+
+## [ ] Step 5: walkthrough.md 작성 및 task.md 갱신
+- [ ] 검증 내역 정리 및 `walkthrough.md` 생성
+- [ ] `task.md` 완료로 갱신
