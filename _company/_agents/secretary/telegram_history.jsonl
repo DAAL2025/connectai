@@ -1,1 +1,24 @@
 {"role":"user","text":"안녕","ts":1779379486007}
+{"role":"user","text":"업무 고도화를 위해 회의하는게 어때? 두뇌를 강화할 시간이야","ts":1779500478669}
+{"role":"assistant","text":"어떤 주제로, 언제 회의를 잡고 싶으신가요? (예: 내일 오후 2시, 업무 고도화 관련)","ts":1779500502756}
+{"role":"user","text":"안녕","ts":1779500502759}
+{"role":"assistant","text":"안녕하세요.","ts":1779500517396}
+{"role":"user","text":"안녕","ts":1779500517399}
+{"role":"assistant","text":"안녕하세요.","ts":1779500531360}
+{"role":"user","text":"하이","ts":1779500532256}
+{"role":"assistant","text":"안녕하세요.","ts":1779500548849}
+{"role":"user","text":"콘텐츠 아이디어 회의를 진행해줘","ts":1779500781498}
+{"role":"assistant","text":"어떤 주제로, 언제 회의를 잡고 싶으신가요? (예: 내일 오후 2시, 콘텐츠 아이디어 관련)","ts":1779500805987}
+{"role":"user","text":"음..지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로","ts":1779501007515}
+{"role":"assistant","text":"(CEO에게 전달) 📨 CEO에게 전달했어요 — AI 음악을 활용한 리릭비디오 또는 뮤직비디오 제작에 대한 구체적인 콘텐츠 아이디어를 요청합니다.","ts":1779501031039}
+{"role":"assistant","text":"현빈: 💼 현빈: PayPal 데이터 가져오기 실패. 💰 PayPal LIVE 모드 · 최근 30일 분석\n❌ OAuth 실패: OAuth 실패 (HTTP 401): {\"error\":\"invalid_client\",\"error_description\":\"Client Authentication failed\"}\n\n\n📋 외부 연결 패널에서 Client ID/Secret","ts":1779502436353}
+{"role":"assistant","text":"현빈: 💼 현빈: PayPal 데이터 가져오기 실패. 💰 PayPal LIVE 모드 · 최근 30일 분석\n❌ OAuth 실패: OAuth 실패 (HTTP 401): {\"error\":\"invalid_client\",\"error_description\":\"Client Authentication failed\"}\n\n\n📋 외부 연결 패널에서 Client ID/Secret","ts":1779502436902}
+{"role":"user","text":"지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로. 그에 대한 콘텐츠 아이디어 회의를 진행해줘.","ts":1779503442876}
+{"role":"assistant","text":"(CEO에게 전달) 📨 CEO에게 전달했어요 — AI 음악을 활용한 리릭비디오 또는 뮤직비디오 제작에 대한 구체적인 콘텐츠 아이디어를 요청합니다.","ts":1779503469104}
+{"role":"user","text":"지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로. 그에 대한 콘텐츠 아이디어 회의를 진행해줘.","ts":1779503611866}
+{"role":"assistant","text":"(CEO에게 전달) 📨 CEO에게 전달했어요 — AI 음악을 활용한 리릭비디오 또는 뮤직비디오 제작에 대한 구체적인 콘텐츠 아이디어를 요청합니다.","ts":1779503639351}
+{"role":"user","text":"다시확인해봐","ts":1779504086135}
+{"role":"user","text":"지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로. 그에 대한 콘텐츠 아이디어 회의를 진행해줘.","ts":1779506575989}
+{"role":"user","text":"/volumes/daal/documents/01.work/connect ai","ts":1779521361873}
+{"role":"user","text":"왜 응답을 못하니","ts":1779521387237}
+{"role":"user","text":"daal@yumungil-ui-Macmini ~ % git log\nfatal: not a git repository (or any parent up to mount point /Volumes)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).\ndaal@yumungil-ui-Macmini ~ % cd /Volumes/daal/Documents/01.Work/01.PROJECT/01.Antigravity/00.MY/saju\ngit log\ncommit b081484afb65dbfecb3a900ba0be9c1212589cf1 (HEAD -> main, origin/main, origin/HEAD)\nAuthor: 유문길 <daal@yumungil-ui-Macmini.local>\nDate:   Sat May 23 17:57:16 2026 +0900\n\n    feat: 서머타임 보정, 한자 토글, 공망/귀인 판정","ts":1779547881220}

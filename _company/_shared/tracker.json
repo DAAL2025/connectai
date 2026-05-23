@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "id": "20260523015030-oeo3",
+      "title": "AI 음악 기반 영상 포맷 아이디어",
+      "description": "음..지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로",
+      "owner": "agent",
+      "createdAt": "2026-05-23T01:50:30.124Z",
+      "status": "done",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "sessionDir": "2026-05-23T02-13",
+      "evidence": "완료: sessions/2026-05-23T02-13/_report.md\n- 현빈: 현빈아, 이번 달 PayPal 매출 실데이터 가져와서 분석하고 다음 액션 1개 추천해줘.\n\nCEO 종합 요점: 💼 현빈: PayPal 데이터 가져오기 실패. 💰 PayPal LIVE 모드 · 최근 30일 분석\n❌ OAuth 실패: OAuth 실패 (HTTP 401): {\"error\":\"invalid_client\",\"error_description\":\"Client Authentication failed\"}\n\n\n📋 외부 연결 패널에서 Client ID/Secret",
+      "completedAt": "2026-05-23T02:13:56.354Z"
+    },
+    {
+      "id": "20260523023108-snhz",
+      "title": "AI 음악 기반 영상 콘텐츠 아이디어 도출",
+      "description": "지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로. 그에 대한 콘텐츠 아이디어 회의를 진행해줘.",
+      "owner": "agent",
+      "createdAt": "2026-05-23T02:31:08.113Z",
+      "status": "done",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "sessionDir": "2026-05-23T02-35",
+      "evidence": "완료: sessions/2026-05-23T02-35/_report.md\n- 영숙: 과거 대화 기록에서 AI 모델 로드 실패 시 더 작은 모델을 선택하거나 메모리 부족 시 모델을 변경하여 재시도하라는 지침이 있었음을 확인하고 해\n\nCEO 종합 요점: ⚠️ **모든 에이전트의 LLM 호출이 실패했습니다.**\n\n시도된 에이전트: 📱 영숙\n\n**가장 흔한 원인**:\n- LM Studio에 모델 로드 실패 (메모리 부족) — 모델 오케스트레이션 모달에서 더 작은 모델 선택\n- Ollama/LM Studio 서버 미실행\n- Context Length 초과 (LM Studio 8192 이상 권장)\n\n_각 에이전",
+      "completedAt": "2026-05-23T02:35:57.902Z"
+    },
+    {
+      "id": "20260523023358-1ob9",
+      "title": "AI 음악 기반 유튜브 영상 콘텐츠 아이디어 도출",
+      "description": "지금 나는 ai음악을 만들어서 유튜브에 올리려고해. 형식은 리릭비디오 또는 뮤직비디오로. 그에 대한 콘텐츠 아이디어 회의를 진행해줘.",
+      "owner": "agent",
+      "createdAt": "2026-05-23T02:33:58.415Z",
+      "status": "done",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "sessionDir": "2026-05-23T02-35",
+      "evidence": "완료: sessions/2026-05-23T02-35/_report.md\n- 영숙: 과거 대화 기록에서 AI 모델 로드 실패 시 더 작은 모델을 선택하거나 메모리 부족 시 모델을 변경하여 재시도하라는 지침이 있었음을 확인하고 해\n\nCEO 종합 요점: ⚠️ **모든 에이전트의 LLM 호출이 실패했습니다.**\n\n시도된 에이전트: 📱 영숙\n\n**가장 흔한 원인**:\n- LM Studio에 모델 로드 실패 (메모리 부족) — 모델 오케스트레이션 모달에서 더 작은 모델 선택\n- Ollama/LM Studio 서버 미실행\n- Context Length 초과 (LM Studio 8192 이상 권장)\n\n_각 에이전",
+      "completedAt": "2026-05-23T02:35:57.906Z"
+    }
+  ]
+}
