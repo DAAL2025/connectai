@@ -41,6 +41,20 @@
       "sessionDir": "2026-05-23T02-35",
       "evidence": "완료: sessions/2026-05-23T02-35/_report.md\n- 영숙: 과거 대화 기록에서 AI 모델 로드 실패 시 더 작은 모델을 선택하거나 메모리 부족 시 모델을 변경하여 재시도하라는 지침이 있었음을 확인하고 해\n\nCEO 종합 요점: ⚠️ **모든 에이전트의 LLM 호출이 실패했습니다.**\n\n시도된 에이전트: 📱 영숙\n\n**가장 흔한 원인**:\n- LM Studio에 모델 로드 실패 (메모리 부족) — 모델 오케스트레이션 모달에서 더 작은 모델 선택\n- Ollama/LM Studio 서버 미실행\n- Context Length 초과 (LM Studio 8192 이상 권장)\n\n_각 에이전",
       "completedAt": "2026-05-23T02:35:57.906Z"
+    },
+    {
+      "id": "20260525134329-6ldh",
+      "title": "영어 PDF 기반 전자책 제작 및 판매 가능성 검토",
+      "description": "음..그럼 영어로 된 pdf파일을 번역하고 디자인해서 전자책으로 완성시킬 수 있겠어? 판매가 가능하게",
+      "owner": "agent",
+      "createdAt": "2026-05-25T13:43:29.976Z",
+      "status": "done",
+      "nudges": 0,
+      "priority": "normal",
+      "preAlarmsSent": [],
+      "sessionDir": "2026-05-25T13-43",
+      "evidence": "완료: sessions/2026-05-25T13-43/_report.md\n- Researcher: 디지털 지식 콘텐츠(E-book) 시장의 최신 트렌드와 잠재적인 수익 모델을 리서치하세요. 특히 B2B 컨설팅 자료 또는 전문 교육용 E-boo\n- 현빈: 수집된 시장 데이터를 기반으로, D.AAL DESIGN이 제안할 'PDF → E-book 판매 프로세스'의 전체 워크플로우를 설계하세요. 이 프\n- Designer: 전자책 상품화 단계에서 필수적인 디자인 스펙을 확정하세요. 학술적이고 전문적인 '컨설팅 보고서' 느낌을 극대화할 수 있는 E-book의 레이아웃\n\nCEO 종합 요점: ## 🗂 작업 라운드 — 누가 뭐 했나\n\n### 🔍 Researcher _(Trend & Data Researcher)_\n> 📋 **지시**: 디지털 지식 콘텐츠(E-book) 시장의 최신 트렌드와 잠재적인 수익 모델을 리서치하세요. 특히 B2B 컨설팅 자료 또는 전문 교육용 E-book의 성공 사례, 일반적인 가격대(Pricing Tier), 그리고",
+      "completedAt": "2026-05-25T13:59:04.620Z"
     }
   ]
 }

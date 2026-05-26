@@ -7,3 +7,15 @@ node_modules/
 *.log
 .cache/
 Thumbs.db
+
+# Credentials & Secrets
+*.local.json
+*_setup.json
+*setup.json
+*write.json
+*account.json
+*.env
+*.key
+*token*
+*secret*
+config.md

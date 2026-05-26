@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Failure Cost Diagnostic Report Prototype | D.AAL DESIGN</title>
+    <style>
+        /* 🎨 Global Styles & Typography */
+        :root {
+            --color-primary: #2c3e50; /* Deep Blue - Authority */
+            --color-secondary: #3498db; /* Growth Color / Solution */
+            --color-danger: #E74C3C; /* Failure Cost Warning (Critical) */
+            --color-success: #2ecc71; /* Pass/Good Status */
+            --font-mono: 'SFMono-Regular', Consolas, 'Menlo', monospace;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--color-primary);
+            border-bottom: 3px solid #ecf0f1;
+            padding-bottom: 15px;
+        }
+
+        /* 🚨 Critical Alert Module Styling */
+        .alert-module {
+            background-color: #fff8e1; /* Light yellow background for attention */
+            border-left: 6px solid var(--color-danger);
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(231, 76, 60, 0.1);
+        }
+
+        .alert-module h2 {
+            color: var(--color-danger);
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        /* Gauge Visualization */
+        .gauge-container {
+            width: 100%;
+            height: 40px;
+            background: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        #failureGauge {
+            height: 100%;
+            width: 0; /* JS will set this */
+            background: linear-gradient(to right, var(--color-success), #f39c1, var(--color-danger));
+            transition: width 2s ease-out;
+        }
+
+        /* Failure Cost Display */
+        .cost-display {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .cost-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--color-danger); /* Critical cost always emphasized */
+            display: block;
+            font-family: var(--font-mono);
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        #auditButton {
+            background-color: var(--color-danger);
+            color: white;
+        }
+
+        #auditButton:hover {
+             transform: translateY(-2px);
+             box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Status Table */
+        .status-card {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .metric-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .metric-label {
+            font-size: 0.9em;
+            color: #777;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📉 시스템 진단 보고서: 재정적 실패 비용 (Failure Cost)</h1>
+        <p>D.AAL DESIGN의 예측 시스템을 통해 현재 운영 시스템의 구조적 리스크를 분석하였습니다.</p>
+
+        <!-- 🚨 Critical Alert Module -->
+        <div id="alertModule" class="alert-module">
+            <h2>⚠️ CRITICAL ALERT: 시스템 리스크 감지</h2>
+            <p id="alertDescription">데이터 로딩 중...</p>
+            <div class="cost-display">
+                Failure Cost 예상 손실액:<br>
+                <span id="failureCostValue" class="cost-value">--</span>
+            </div>
+        </div>
+
+        <!-- Gauge Visualization -->
+        <h3>📊 Failure Cost 위험도 게이지</h3>
+        <div class="gauge-container">
+            <div id="failureGauge"></div>
+        </div>
+
+        <!-- Call to Action Area -->
+        <div class="cta-group">
+            <button id="auditButton">🚨 시스템 감사 요청 (System Audit)</button>
+            <button onclick="alert('문의 채널을 열어드리겠습니다.')" style="background-color: #ccc; color: var(--color-primary);">보고서 다운로드</button>
+        </div>
+
+        <!-- Status Summary -->
+        <div class="status-card">
+            <h2>핵심 진단 지표 요약</h2>
+            <div class="status-grid" id="statusGrid">
+                <!-- Metrics will be injected here by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ----------------------------------------------
+        // [API Simulation] Mock Data (FailureCostSchema.ts 기반)
+        // 실제 서비스에서는 fetch('/api/v1/failure-cost') 등으로 대체됩니다.
+        const MOCK_DATA = {
+            success: true,
+            reportDate: new Date().toISOString(),
+            statusLevel: 'High', // High, Medium, Low
+            data: {
+                totalFailureCostEstimateKRW: 4500000, // 450만원
+                failureRatePercentage: 18.5, // %
+                criticalAlert: "핵심 마케팅 퍼널의 전환율 하락이 감지되었습니다. 현재 운영 로직으로는 이 손실을 방어할 수 없습니다.",
+                statusDescription: "시스템 구조적 결함으로 인한 예측 가능한 재정적 리스크가 높습니다.",
+                metrics: [
+                    { label: '월 평균 예상 매출 (MRR)', value: '7,200만원', color: '#2ecc71' },
+                    { label: '최근 30일 트래픽 변화율', value: '-12.5%', color: '#e67e22' },
+                    { label: '데이터 일관성 지수 (DCI)', value: '0.82/1.0', color: '#3498db' }
+                ]
+            }
+        };
+
+        /**
+         * API 데이터를 받아와 UI를 렌더링하는 메인 함수
+         */
+        function renderReport(data) {
+            // 1. Failure Cost 값 설정 및 Gauge 업데이트
+            const costValueElement = document.getElementById('failureCostValue');
+            const gaugeElement = document.getElementById('failureGauge');
+            
+            costValueElement.textContent = `${Math.round(data.totalFailureCostEstimateKRW / 1000)}만원`;
+
+            // Failure Cost 레벨에 따른 경고색 및 게이지 너비 설정 (예: 최대 리스크=100%)
+            let widthPercentage;
+            if (data.statusLevel === 'High') {
+                widthPercentage = 85; // 높음
+                document.getElementById('alertModule').style.borderColor = '#E74C3C';
+                costValueElement.style.color = '#E74C3C';
+            } else if (data.statusLevel === 'Medium') {
+                widthPercentage = 50; // 중간
+                 document.getElementById('alertModule').style.borderColor = '#f39c1';
+                costValueElement.style.color = '#e67e22';
+            } else {
+                widthPercentage = 15; // 낮음
+                 document.getElementById('alertModule').style.borderColor = '#2ecc71';
+                costValueElement.style.color = '#2ecc71';
+            }
+
+            gaugeElement.style.width = `${widthPercentage}%`;
+
+
+            // 2. 경고 메시지 업데이트 (가장 중요한 부분)
+            document.getElementById('alertDescription').innerHTML = `
+                <strong>[원인]:</strong> ${data.criticalAlert}<br>
+                <em style="color: var(--color-danger); font-weight: bold;">${data.statusDescription}</em>
+            `;
+
+            // 3. 상태 지표 업데이트
+            const statusGrid = document.getElementById('statusGrid');
+            statusGrid.innerHTML = data.metrics.map(metric => `
+                <div class="metric-box">
+                    <div class="metric-label">${metric.label}</div>
+                    <div class="metric-value" style="color: ${metric.color};">${metric.value}</div>
+                </div>
+            `).join('');
+
+            console.log("✅ Failure Cost 보고서 렌더링 완료. 경고 메시지가 성공적으로 강조되었습니다.");
+        }
+
+
+        /**
+         * 초기 로드 시 실행되는 이벤트 핸들러
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // 실제로는 여기서 API 호출이 발생합니다.
+            // fetch('/api/v1/failure-cost')
+            //     .then(response => response.json())
+            //     .then(data => renderReport(data));
+
+            // Mock Data로 테스트 실행 (최소 실행 가능한 코드 확보)
+            renderReport(MOCK_DATA.data); 
+        });
+    </script>
+</body>
+</html>
+```
