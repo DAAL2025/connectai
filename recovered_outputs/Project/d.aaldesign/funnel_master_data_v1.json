@@ -1,0 +1,147 @@
+{
+  "project_name": "Mini-Audit Funnel Master Data Set",
+  "version": "1.0.0",
+  "last_updated": "2026-05-27",
+  "purpose": "Funnel 페이지의 근거 자료 및 3단계 상품 비교 UI의 핵심 데이터를 구조화하여, 재무적 위기감을 극대화하고 구매를 유도하는 데 사용.",
+  
+  "sections": {
+    
+    "1. payment_flow_state_machine": {
+      "description": "사용자가 Mini-Audit 진단 결과 페이지에 도달했을 때의 의사결정 흐름(Funnel Conversion Path)을 정의합니다. '실패 처리' 단계가 가장 중요하며, 여기서 해결책 제시로 연결되어야 합니다.",
+      "states": [
+        {
+          "state_id": "S01_Audit_Input",
+          "description": "사용자 초기 데이터 입력 (산업군, 규모 등)",
+          "action": "데이터 수집 및 유효성 검사 (Pydantic 기반)",
+          "next_states": ["S02_Risk_Calculation"]
+        },
+        {
+          "state_id": "S02_Risk_Calculation",
+          "description": "핵심 로직 실행: Funnel Cost ($FC$) 계산 및 리스크 게이지 시각화.",
+          "output": {"FC_Value": "[최소 월 $X,XXX] - [최대 월 $Y,YYY]", "Alert_Level": "Critical/Warning"},
+          "next_states": ["S03_Result_View"]
+        },
+        {
+          "state_id": "S03_Result_View",
+          "description": "진단 결과 제시 (위기감 극대화 단계). '문제 인식'에 집중.",
+          "elements": [
+            {"type": "Headline", "content": "당신의 비즈니스는 현재 월 평균 최소 $X,XXX의 운영 손실을 보고 있습니다."},
+            {"type": "Visual", "component": "Critical Alert Module (CAM)", "detail": "위기 게이지 (빨간색/노란색) 시각화"},
+            {"type": "CTA_Primary", "text": "✅ 정확한 원인 진단받기: Mini-Audit 시작"}
+          ],
+          "next_states": ["S04_Solution_Comparison"]
+        },
+        {
+          "state_id": "S04_Solution_Comparison",
+          "description": "솔루션 제시 및 3단계 상품 비교 UI (가장 중요한 전환 지점).",
+          "elements": [
+            {"type": "Title", "text": "손실 비용 $X,XXX를 막을 수 있는 세 가지 시스템 설계 옵션."},
+            {"type": "Comparison_Table", "description": "Starter/Pro/Enterprise 비교 (Loss Avoidance 기준)"},
+            {"type": "CTA_Secondary", "text": "자세한 컨설팅 문의하기"}
+          ],
+          "next_states": ["S05_Purchase"]
+        },
+        {
+          "state_id": "S05_Purchase",
+          "description": "결제 및 최종 전환. PayPal/Stripe 연동 필수.",
+          "payment_flow_checkpoints": [
+            {"step": "장바구니 담기", "validation": "상품 선택, 수량 확인"},
+            {"step": "배송지 정보 입력 (N/A)", "validation": "계정 생성 또는 비회원 결제 옵션 제공"},
+            {"step": "결제 방식 선택", "validation": "PayPal, 카드 등 다중 옵션 제시. PayPal 로고 필수 노출."},
+            {"step": "최종 확인 및 승인", "validation": "실패 시 친절한 에러 메시지 (예: '카드사에 재문의하세요.') 제공"}
+          ]
+        }
+      ]
+    },
+
+    "2. operational_risk_dataset": {
+      "description": "산업별/시스템별 핵심 운영 리스크와 그에 따른 정량적 손실 비용($FC$) 및 해결책의 가치를 구조화한 데이터셋.",
+      "data_points": [
+        {
+          "category": "결제 시스템 안정성 (Payment Gate)",
+          "risk_name": "간헐적인 트랜잭션 실패 (Intermittent Failure)",
+          "severity": "High",
+          "impact": "매출 감소 및 고객 이탈. 결제 성공률 95% $\to$ 90% 하락 시.",
+          "fc_quantitative_example": {
+            "unit": "월 평균 손실액 (Failure Cost)",
+            "low_estimate": "$2,000",
+            "high_estimate": "$15,000",
+            "근거": "결제 트랜잭션 실패율 1% 증가 시 발생하는 연간 매출 손실분(가정: 월 매출 $X$ 가정)."
+          },
+          "dalal_solution_value": {
+            "service": "Mini-Audit (Payment Flow Diagnosis)",
+            "description": "결제 플로우 E2E 테스트 및 재시도 로직 설계.",
+            "monetized_value": "$8,000 - $12,000 (Pro Plan)" 
+          }
+        },
+        {
+          "category": "데이터 구조 최적화 (Data Integrity)",
+          "risk_name": "레거시 데이터 누락/비정합성",
+          "severity": "High",
+          "impact": "보고서의 신뢰도 하락, 잘못된 의사결정 유발. (특히 $FC$ 계산 근거 자료 손실).",
+          "fc_quantitative_example": {
+            "unit": "기회 비용 (Opportunity Cost)",
+            "low_estimate": "$500",
+            "high_estimate": "$30,000",
+            "근거": "데이터 오류로 인한 잘못된 비즈니스 전략 수립 및 시장 대응 실패에 따른 잠재적 매출 손실."
+          },
+          "dalal_solution_value": {
+            "service": "Growth OS 구축 컨설팅 (Data Pipeline)",
+            "description": "Pydantic 기반 데이터 유효성 검증 시스템 설계.",
+            "monetized_value": "$15,000 - $25,000 (Enterprise Plan)"
+          }
+        },
+        {
+          "category": "사용자 경험/여정 분석 (UX Funnel)",
+          "risk_name": "미흡한 온보딩 또는 이탈 지점 발견 실패",
+          "severity": "Medium",
+          "impact": "잠재 고객의 구매 여정 단절. '왜 떠났는지' 모르는 손실 발생.",
+          "fc_quantitative_example": {
+            "unit": "월 평균 유입 대비 전환율 하락 비용",
+            "low_estimate": "$1,000",
+            "high_estimate": "$8,000",
+            "근거": "핵심 랜딩페이지의 이탈 지점 1개 발견 실패로 인한 잠재 고객 $N$명 손실."
+          },
+          "dalal_solution_value": {
+            "service": "UX Funnel 최적화 및 A/B 테스트 설계",
+            "description": "가장 효율적인 사용자 여정(User Journey) 설계 및 구현.",
+            "monetized_value": "$6,000 - $10,000 (Pro Plan)"
+          }
+        },
+         {
+          "category": "콘텐츠/마케팅 시스템 (Content Management)",
+          "risk_name": "뉴스레터 또는 콘텐츠 배포의 비일관성",
+          "severity": "Medium",
+          "impact": "브랜드 신뢰도 하락, 마케팅 자산 가치 감소. 꾸준한 소통 실패.",
+          "fc_quantitative_example": {
+            "unit": "연간 잠재 고객 확보 비용 (CAC 증가)",
+            "low_estimate": "$300",
+            "high_estimate": "$1,500",
+            "근거": "일관성 없는 콘텐츠로 인해 신규 트래픽 유입에 더 많은 광고비(Ad Spend)가 필요한 상황."
+          },
+          "dalal_solution_value": {
+            "service": "Content Automation 및 배포 시스템 구축",
+            "description": "콘텐츠-CRM 연동 자동화 및 체계적인 아카이빙 구조 설계.",
+            "monetized_value": "$4,000 - $7,000 (Pro Plan)"
+          }
+        },
+        {
+          "category": "법적/운영 준수 (Compliance)",
+          "risk_name": "개인정보 취급 및 규정 미준수",
+          "severity": "Critical",
+          "impact": "최대 벌금, 서비스 중단. 비즈니스의 존폐 위협.",
+          "fc_quantitative_example": {
+            "unit": "법적 제재 비용 (벌금)",
+            "low_estimate": "$10,000",
+            "high_estimate": "$100,000+",
+            "근거": "개인정보보호법 위반 시 발생하는 정부 벌금 및 소송 비용."
+          },
+          "dalal_solution_value": {
+            "service": "Compliance System Audit & Documentation",
+            "description": "GDPR/국내 법규 준수 시스템 설계 및 문서화.",
+            "monetized_value": "$20,000 - $40,000 (Enterprise Plan)" 
+          }
+      ]
+    }
+  }
+}

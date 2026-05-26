@@ -1,0 +1,19 @@
+# D.AAL DESIGN 랜딩페이지 마스터 디자인 사양서 V2.0
+**버전:** 2.0 (ROI & Value Perception Flow 통합)
+**작성일:** 2026-05-XX
+
+---
+### 🎨 비주얼 시스템 가이드라인 요약
+1. **컬러 팔레트:** Deep Navy (#0A1931), Growth Coral (#FF6B3D), Warning Amber (#FFC300). (최우선 적용)
+2. **타이포그래피:** Pretendard 계열 사용. H1/H2는 시스템적 무게감을 유지할 것.
+
+### 💻 섹션별 인터랙티브 명세 (Key Interactions)
+*   **[Hero] Data Flow Animation:** 스크롤에 반응하는 은은한 배경 애니메이션.
+*   **[Pain Point] Glitch Effect:** 문제점을 인지시키는 시각적 왜곡 효과 사용.
+*   **[Solution] Loss Estimate Trigger:** 데이터 플로우 다이어그램에서 특정 지점 클릭 $\rightarrow$ 예상 손실액(재무적 가치) 팝업.
+*   **[Pricing] Interactive Simulator:** 결제 상품 선택 시, '월간 수익 예측 시뮬레이션' 위젯이 활성화되어 구체적인 ROI 수치를 실시간으로 보여줘야 함.
+
+### 📐 와이어프레임 구조 (Desktop View 기준)
+(여기에 명세서에 따른 고해상도 Mock-up 이미지를 배치한다고 가정합니다.)
+
+**[첨부 파일]:** 이 문서는 디자인 시스템과 인터랙션 로직을 포함한 최종 개발 가이드로 사용되어야 합니다.
